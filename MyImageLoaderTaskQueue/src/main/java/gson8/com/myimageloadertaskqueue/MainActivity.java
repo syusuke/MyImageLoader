@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onBindViewHolder(VH holder, int position) {
 
+            holder.iv.setImageResource(R.mipmap.ic_launcher);
             MyImageLoader.getInstance(config).displayImage(list.get(position), holder.iv);
 
         }

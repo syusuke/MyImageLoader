@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Dir_windown_Popup">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+</resources>
