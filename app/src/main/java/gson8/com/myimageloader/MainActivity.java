@@ -1,5 +1,6 @@
 package gson8.com.myimageloader;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onBindViewHolder(VH holder, int position) {
+
+            Intent intent = new Intent();
+            startActivity(intent);
 
             holder.iv.setImageResource(R.mipmap.ic_launcher);
             ImageLoader.getInstance(MainActivity.this)

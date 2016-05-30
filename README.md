@@ -2,7 +2,28 @@
 
 # 个人小型图片加载框架
 
-## 1.MyImageLoader+TaskQueue版(LruCache&DiskLruCache)
+
+## 1.ImageLoader简易版(LruCache&DiskLruCache)(思路来源:自己)
+这个是我自己写的.
+**这个相比第一个来说就是没有任务队列**
+**只有线程池的的`内部队列`**
+
+`LruCache`&`DiskLruCache`
+
+![](mImg/Image0529165944.jpg)
+
+`PS`:**当前这个中,所以的任务进来都只能按照进来的顺序反选,线程池在的线程执行完毕后会自动调用下一个等待的线程**
+
+`Folder `:** App **
+```java
+ ImageLoader.getInstance(MainActivity.this)
+                    .displayImage(holder.iv, list.get(position), null);
+```
+
+
+
+
+## 2.MyImageLoader+TaskQueue版(LruCache&DiskLruCache)(灵感来源:鸿洋视频)
 `Folder:`** MyImageLoaderTaskQueue**
 
 [源码地址,可直接用的](MyImageLoaderTaskQueue.rar)
@@ -44,32 +65,6 @@ MyImageLoader.getInstance(config).displayImage(imgUrl, ImagerView);
 
 
 
-## 2.ImageLoader简易版(LruCache&DiskLruCache)
-**这个相比第一个来说就是没有任务队列**
-**只有线程池的的`内部队列`**
-
-`LruCache`&`DiskLruCache`
-
-![](mImg/Image0529165944.jpg)
-
-`PS`:**当前这个中,所以的任务进来都只能按照进来的顺序反选,线程池在的线程执行完毕后会自动调用下一个等待的线程**
-
-`Folder `:** App **
-```java
- ImageLoader.getInstance(MainActivity.this)
-                    .displayImage(holder.iv, list.get(position), null);
-```
-
-
-
-## 3.加载本地图片版(LruCache)
-`Folder`:** ImoocImageLoader **
-
-
->Imooc 上的高仿微信图片选择器
-
-![](mImg/wx.gif)
-
 
 # 注意
 ### // 在ListView/RecyclerView/GridView 加上这个可以避免图片的加载未完成时错位
@@ -81,5 +76,16 @@ ImageLoader.getInstance(4, ImageLoader.Type.LIFO)
         .loadImage(mDirPath + "/" + mImagPaths.get(position), holder.img);
 
 ```
+
+
+## 3.加载本地图片版(LruCache)(Imooc视频源码)
+`Folder`:** ImoocImageLoader **
+
+
+** Imooc HongYang(鸿洋)上的高仿微信图片选择器 **
+
+
+![](mImg/wx.gif)
+
 
 
