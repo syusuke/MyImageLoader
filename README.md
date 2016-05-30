@@ -20,11 +20,11 @@
                     .displayImage(holder.iv, list.get(position), null);
 ```
 
-
+>PS:正因为我觉得这个不够好,所以我找到了IMOOC上仿微信的视频,实现了视频上的,再加上我自己原来的,就有了第`2`个框架. 这个原到TaskQueue队列来控制线程执行的顺序,而不再是原来的线程池执行的顺序.
 
 
 ## 2.MyImageLoader+TaskQueue版(LruCache&DiskLruCache)(灵感来源:鸿洋视频)
-`Folder:`** MyImageLoaderTaskQueue**
+`Folder:`: ** MyImageLoaderTaskQueue **
 
 [源码地址,可直接用的](MyImageLoaderTaskQueue.rar)
 ### 结构
